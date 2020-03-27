@@ -29,9 +29,6 @@ let numStr = String(num);
 let arr = numStr.split('');
 let sum = 1;
 
-//вывод в консоль
-console.log(numStr.split(''));
-
 //цикл
 for ( let i = 0; i < numStr.length; i++) {
   sum = sum * +arr[i];
@@ -39,11 +36,10 @@ for ( let i = 0; i < numStr.length; i++) {
 
 //переменная
 let res = sum ** 3;
-
 //не совсем понял что значит вывести на экран решил что так наверное
 let block = document.getElementById('add');
 const  h1 = document.createElement('h1');
-h1.textContent = String(res).slice(1,3);
+h1.textContent = String(res).slice(0,2);
 block.append(h1);
 
 //изначально выводил в консоль
