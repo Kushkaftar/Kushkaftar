@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="582d652b-26e0-4321-a30b-a45f9fbb468d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26bea24f-04fa-4db5-afa0-748425fad695.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/26bea24f-04fa-4db5-afa0-748425fad695.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +78,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\GlO_Ac\lesson" />
+    </key>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -116,7 +122,8 @@
       <updated>1585201171396</updated>
       <workItem from="1585201172586" duration="7007000" />
       <workItem from="1585224426449" duration="623000" />
-      <workItem from="1585242459475" duration="854000" />
+      <workItem from="1585242459475" duration="2107000" />
+      <workItem from="1585285570955" duration="1673000" />
     </task>
     <servers />
   </component>
@@ -152,9 +159,9 @@
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
     <state x="2792" y="207" key="SettingsEditor/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1585222294272" />
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1585224438612">
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1585285599528">
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1585224438612" />
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1585285599528" />
   </component>
 </project>
