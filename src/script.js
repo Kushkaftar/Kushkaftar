@@ -21,17 +21,30 @@ console.log(addExpenses.toLocaleLowerCase().split(', '));
 //вывод в консоль
 console.log(budgetDay);
 
-//+++
+//+++ доп задание
+
+//переменные
 let num = 266219;
 let numStr = String(num);
-let arr = numStr.split('')
+let arr = numStr.split('');
 let sum = 1;
+
+//вывод в консоль
 console.log(numStr.split(''));
 
+//цикл
 for ( let i = 0; i < numStr.length; i++) {
   sum = sum * +arr[i];
 }
 
+//переменная
 let res = sum ** 3;
-console.log(String(res).slice(1,3));
-//let arr = num.split
+
+//не совсем понял что значит вывести на экран решил что так наверное
+let block = document.getElementById('add');
+const  h1 = document.createElement('h1');
+h1.textContent = String(res).slice(1,3);
+block.append(h1);
+
+//изначально выводил в консоль
+//console.log(String(res).slice(1,3));
