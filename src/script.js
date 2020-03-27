@@ -22,3 +22,16 @@ console.log(addExpenses.toLocaleLowerCase().split(', '));
 console.log(budgetDay);
 
 //+++
+let num = 266219;
+let numStr = String(num);
+let arr = numStr.split('')
+let sum = 1;
+console.log(numStr.split(''));
+
+for ( let i = 0; i < numStr.length; i++) {
+  sum = sum * +arr[i];
+}
+
+let res = sum ** 3;
+console.log(String(res).slice(1,3));
+//let arr = num.split
