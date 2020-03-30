@@ -21,26 +21,32 @@ console.log(addExpenses.toLocaleLowerCase().split(', '));
 //вывод в консоль
 console.log(budgetDay);
 
-//+++ доп задание
+money = +prompt('Ваш месячный доход?');
 
-//переменные
-let num = 266219;
-let numStr = String(num);
-let arr = numStr.split('');
-let sum = 1;
+addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
 
-//цикл
-for ( let i = 0; i < numStr.length; i++) {
-  sum = sum * +arr[i];
+deposit = confirm('Есть ли у вас депозит в банке?');
+
+let expenses1 = prompt('Введите обязательную статью расходов?');
+let amount1 = +prompt('Во сколько это обойдется?');
+
+let expenses2 = prompt('Введите обязательную статью расходов?');
+let amount2 = +prompt('Во сколько это обойдется?');
+
+let budgetMonth = money - (amount1 + amount2);
+console.log(budgetMonth);
+
+console.log(Math.ceil(mission/budgetMonth));
+
+budgetDay = Math.floor(budgetMonth/30);
+console.log(budgetDay);
+
+if (budgetDay >= 1200) {
+    console.log('У вас высокий уровень дохода');
+}  else if (budgetDay >= 600) {
+    console.log('У вас средний уровень дохода');
+} else if (budgetDay >= 0) {
+    console.log('К сожалению у вас уровень дохода ниже среднего');
+} else if (budgetDay < 0) {
+    console.log('Что то пошло не так');
 }
-
-//переменная
-let res = sum ** 3;
-//не совсем понял что значит вывести на экран решил что так наверное
-let block = document.getElementById('add');
-const  h1 = document.createElement('h1');
-h1.textContent = String(res).slice(0,2);
-block.append(h1);
-
-//изначально выводил в консоль
-//console.log(String(res).slice(1,3));
