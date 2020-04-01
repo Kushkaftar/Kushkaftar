@@ -9,15 +9,15 @@
       <ObjectId>16385</ObjectId>
       <Owner>callcenter</Owner>
       <IntrospectionStateNumber>695</IntrospectionStateNumber>
-      <Relations>sequence|table|16539|16541|1
-sequence|table|16547|16549|1
-sequence|table|16588|16590|1
+      <Relations>sequence|table|16588|16590|1
 sequence|table|16602|16604|1
 sequence|table|16616|16618|1
 sequence|table|16636|16638|1
 sequence|table|16441|16443|1
 sequence|table|16456|16458|1
 sequence|table|16470|16472|1
+sequence|table|16539|16541|1
+sequence|table|16547|16549|1
 sequence|table|16485|16487|1
 sequence|table|16493|16495|1
 sequence|table|16510|16512|1

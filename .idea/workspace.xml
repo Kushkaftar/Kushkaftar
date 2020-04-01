@@ -68,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../OS_RABOTA/vueTest2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -126,7 +126,8 @@
       <workItem from="1585317709333" duration="479000" />
       <workItem from="1585326142297" duration="2495000" />
       <workItem from="1585505510466" duration="1234000" />
-      <workItem from="1585586115281" duration="4721000" />
+      <workItem from="1585586115281" duration="6692000" />
+      <workItem from="1585718316816" duration="6387000" />
     </task>
     <servers />
   </component>
