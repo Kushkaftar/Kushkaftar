@@ -1,13 +1,14 @@
 // переменные
 let money = 80000,
     income = 'freelance',
-    addExpenses = 'cigarettes, wine, girls',
-    deposit = true,
+    addExpenses,
+    deposit,
     mission = 1000000,
-    period = 6;
+    period = 6,
+    budgetDay;
 
 // бюджет на день
-let budgetDay = money/30;
+//let budgetDay = money/30;
 
 // блок ввода
 money = +prompt('Ваш месячный доход?');
@@ -44,8 +45,13 @@ function getTargetMonth() {
     return Math.ceil(mission/accumulatedMonth);
 }
 
+function getbudgetDay() {
+   budgetDay = accumulatedMonth/30;
+   return budgetDay;
+}
+
 // getStatusIncome ...
-function getStatusIncome() {
+function getStatusIncome(budgetDay) {
     let textResult;
     if (budgetDay >= 1200) {
         textResult = 'У вас высокий уровень дохода';
@@ -66,5 +72,5 @@ console.log(showTypeOf(deposit));
 console.log(getExpensesMonth());
 console.log(addExpenses.split(', '));
 console.log(getTargetMonth());
-console.log(budgetDay);
-console.log(getStatusIncome());
+console.log(getbudgetDay());
+console.log(getStatusIncome(getbudgetDay()));
