@@ -60,9 +60,9 @@ function getExpensesMonth() {
             expenses2 = prompt('Введите обязательную статью расходов?');
         }
         do {
-            preSum = +prompt('Во сколько это обойдется?');
+            preSum = prompt('Во сколько это обойдется?');
         } while (!isNumber(preSum));
-        sum += preSum
+        sum += +preSum
     }
     return sum;
 }
