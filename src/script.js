@@ -62,7 +62,7 @@ let appData = {
 };
 
 // methods
-appData.budget = start();
+appData.budget = +start();
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
