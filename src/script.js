@@ -30,11 +30,9 @@ let appData = {
 
     // расходы в месяц
     getExpensesMonth: function () {
-       // let sum = 0;
         for (let key in appData.expenses) {
             appData.expensesMonth += appData.expenses[key];
         }
-        //appData.expensesMonth = sum;
     },
 
     // свободные деньги
@@ -47,13 +45,6 @@ let appData = {
     getTargetMonth: function () {
         return Math.ceil(appData.mission/appData.budgetMonth);
     },
-
-    // getBudgetDay ...
-    // getBudgetDay: function() {
-    //     appData.budgetDay = appData.getBudget()/30;
-    //     return appData.budgetDay;
-    // },
-
     // getStatusIncome ...
     getStatusIncome: function(budgetDay) {
     let textResult;
