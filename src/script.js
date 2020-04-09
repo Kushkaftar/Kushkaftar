@@ -30,28 +30,29 @@ let appData = {
 
     // расходы в месяц
     getExpensesMonth: function () {
-        let sum = 0;
+       // let sum = 0;
         for (let key in appData.expenses) {
-            sum += appData.expenses[key];
+            appData.expensesMonth += appData.expenses[key];
         }
-        return sum;
+        //appData.expensesMonth = sum;
     },
 
     // свободные деньги
     getBudget: function () {
-        return appData.budget - appData.getExpensesMonth();
+        appData.budgetMonth = appData.budget - appData.expensesMonth;
+        appData.budgetDay = appData.budgetMonth / 30;
     },
 
     //подсчет периода достижения цели
     getTargetMonth: function () {
-        return Math.ceil(appData.mission/appData.getBudget());
+        return Math.ceil(appData.mission/appData.budgetMonth);
     },
 
     // getBudgetDay ...
-    getBudgetDay: function() {
-        appData.budgetDay = appData.getBudget()/30;
-        return appData.budgetDay;
-    },
+    // getBudgetDay: function() {
+    //     appData.budgetDay = appData.getBudget()/30;
+    //     return appData.budgetDay;
+    // },
 
     // getStatusIncome ...
     getStatusIncome: function(budgetDay) {
@@ -72,12 +73,14 @@ let appData = {
 // methods
 appData.budget = start();
 appData.asking();
+appData.getExpensesMonth();
+appData.getBudget();
 
 // вывод в консоль
-console.log('getBudgetDay', appData.getBudgetDay());
+console.log('getBudgetDay', appData.budgetDay);
 console.log(appData.getTargetMonth());
-console.log(appData.getStatusIncome(appData.getBudgetDay()));
-//console.log(appData);
+console.log(appData.getStatusIncome(appData.budgetDay));
+console.log(appData);
 
 // функции
 
