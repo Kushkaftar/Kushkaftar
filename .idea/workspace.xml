@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="582d652b-26e0-4321-a30b-a45f9fbb468d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26bea24f-04fa-4db5-afa0-748425fad695.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/26bea24f-04fa-4db5-afa0-748425fad695.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +132,9 @@
       <workItem from="1585888796059" duration="9631000" />
       <workItem from="1586008223719" duration="804000" />
       <workItem from="1586366174611" duration="9811000" />
-      <workItem from="1586429136000" duration="3670000" />
+      <workItem from="1586429136000" duration="4863000" />
+      <workItem from="1586552783020" duration="6567000" />
+      <workItem from="1586588704603" duration="6575000" />
     </task>
     <servers />
   </component>
@@ -170,9 +174,9 @@
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
     <state x="2792" y="207" key="SettingsEditor/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1585222294272" />
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1586429144483">
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1586588705544">
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1586429144483" />
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1586588705544" />
   </component>
 </project>

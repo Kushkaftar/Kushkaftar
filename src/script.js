@@ -8,6 +8,8 @@ let appData = {
     expenses: {},
     addExpenses: [],
     deposit: false,
+    percentDeposit: 0,
+    moneyDeposit: 0,
     mission: 1000000,
     period: 6,
     budget: null,
@@ -15,16 +17,31 @@ let appData = {
     budgetMonth: 0,
     expensesMonth: 0,
     asking: function () {
-        let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую');
+
+        if (confirm('есть ли доп заработок')){
+            let itemIncome = questionHelp('str',
+                'Какой у вас дополнительный заработок',
+                'taxi');
+            appData.income[itemIncome] = +questionHelp('numb',
+                'сколько выходит в месяц',
+                10000);
+        }
+
+        let addExpenses = questionHelp('str',
+            'Перечислите возможные расходы за рассчитываемый период через запятую',
+            'кино, вино, домино');
         appData.addExpenses = addExpenses.split(', ');
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
+        appData.getInfoDeposit();
         for (let i = 0; i < 2; i++) {
-            let preSum;
-            let expenses1 = prompt('Введите обязательную статью расходов?');
-            do {
-                preSum = prompt('Во сколько это обойдется?');
-            } while (!isNumber(preSum));
-           appData.expenses[expenses1] = +preSum;
+
+            let expenses = questionHelp('str',
+                'Введите обязательную статью расходов?',
+            `article${i}`);
+
+            appData.expenses[expenses] =  +questionHelp('numb',
+                    'Во сколько это обойдется?',
+                    5000);
         }
     },
 
@@ -38,7 +55,7 @@ let appData = {
     // свободные деньги
     getBudget: function () {
         appData.budgetMonth = appData.budget - appData.expensesMonth;
-        appData.budgetDay = appData.budgetMonth / 30;
+        appData.budgetDay = Math.floor(appData.budgetMonth) / 30;
     },
 
     //подсчет периода достижения цели
@@ -58,7 +75,20 @@ let appData = {
         textResult = 'Цель не будет достигнута';
     }
     return textResult;
-}
+},
+    getInfoDeposit() {
+        if (appData.deposit) {
+            appData.percentDeposit = +questionHelp('numb',
+                'какой годовой %?',
+                3);
+            appData.moneyDeposit = +questionHelp('numb',
+                'Сумма на депозите?',
+                10000);
+        }
+    },
+    calcSaveMoney() {
+        return appData.budgetMonth * appData.period;
+    }
 };
 
 // methods
@@ -66,6 +96,7 @@ appData.budget = +start();
 appData.asking();
 appData.getExpensesMonth();
 appData.getBudget();
+//appData.getInfoDeposit();
 
 // вывод в консоль
 console.log('getBudgetDay', appData.budgetDay);
@@ -75,6 +106,23 @@ console.log(appData);
 
 // функции
 
+// func question
+function questionHelp(query, string, defaultItem) {
+    let answer;
+    switch (query) {
+        case 'str':
+            do {
+                answer = prompt(string, defaultItem);
+            } while ( !isNaN(answer));
+            break;
+        case 'numb':
+            do {
+                answer = prompt(string, defaultItem);
+            } while (!isNumber(answer));
+            break;
+    }
+    return answer;
+}
 // isNumber ...
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -88,3 +136,9 @@ function start() {
     } while (!isNumber(money));
     return money;
 }
+
+//
+let addExpenses, addExpenses2 = [];
+appData.addExpenses.forEach(element => addExpenses2.push(element[0].toUpperCase() + element.slice( 1, element.length + 1)));
+addExpenses = addExpenses2.join(', ');
+console.log(addExpenses);
