@@ -8,13 +8,13 @@ const startButton = document.getElementById('start'),
     incomeInput1 = document.querySelectorAll(".additional_income-item")[1],
     expensesPlusButton = document.getElementsByTagName("button")[1],
     checkboxDeposit = document.querySelector("#deposit-check"),
-    inputBudgetMonth =  document.querySelector(".budget_month-value"),
-    inputBudgetDay =  document.querySelector(".budget_day-value"),
-    inputExpensesMonth =  document.querySelector(".expenses_month-value"),
-    inputIncome =  document.querySelector(".additional_income-value"),
-    inputExpenses =  document.querySelector(".additional_expenses-value"),
-    inputIncomePeriod =  document.querySelector(".income_period-value"),
-    inputTargetMonth =  document.querySelector(".target_month-value"),
+    inputBudgetMonth =  document.getElementsByClassName("budget_month-value")[0],
+    inputBudgetDay =  document.getElementsByClassName("budget_day-value")[0],
+    inputExpensesMonth =  document.getElementsByClassName("expenses_month-value")[0],
+    inputIncome =  document.getElementsByClassName("additional_income-value")[0],
+    inputExpenses =  document.getElementsByClassName("additional_expenses-value")[0],
+    inputIncomePeriod =  document.getElementsByClassName("income_period-value")[0],
+    inputTargetMonth =  document.getElementsByClassName("target_month-value")[0],
     inputRangePeriod =  document.querySelector(".period-select"),
     inputIncomeTitle =  document.querySelector(".income-title"),
     inputIncomeAmount =  document.querySelector(".income-amount"),
@@ -22,6 +22,7 @@ const startButton = document.getElementById('start'),
     inputExpensesAmount =  document.querySelector(".expenses-amount"),
     inputAdditionalExpensesItem =  document.querySelector(".additional_expenses-item"),
     inputTargetAmount = document.querySelector(".target-amount");
+
 
 // объект
 let appData = {
