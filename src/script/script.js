@@ -1,6 +1,7 @@
 
 // элементы DOM
 let startButton = document.getElementById("start"),
+    cancelButton = document.getElementById("cancel"),
     salaryAmount = document.querySelector(".salary-amount"),
     incomePlusButton = document.getElementsByTagName("button")[0],
     expensesPlusButton = document.getElementsByTagName("button")[1],
@@ -40,16 +41,14 @@ let appData = {
     expensesMonth: 0,
 
     start() {
-
-        appData.budget = +salaryAmount.value;
-        appData.getExpenses();
-        appData.getIncome();
-        appData.getExpensesMonth();
-        appData.getAddExpenses();
-        appData.getAddIncome();
-        appData.getBudget();
-        appData.showResult();
-
+        this.budget = +salaryAmount.value;
+        this.getExpenses();
+        this.getIncome();
+        this.getExpensesMonth();
+        this.getAddExpenses();
+        this.getAddIncome();
+        this.getBudget();
+        this.showResult();
     },
 
     addExpensesBlock() {
@@ -77,7 +76,7 @@ let appData = {
             let elemExpenses = elem.querySelector(".expenses-title").value,
                 cashExpenses = elem.querySelector(".expenses-amount").value;
             if (elemExpenses !== "" && cashExpenses !== "") {
-                appData.expenses[elemExpenses] = +cashExpenses;
+                this.expenses[elemExpenses] = +cashExpenses;
             }
         })
     },
@@ -87,24 +86,24 @@ let appData = {
             let elemIncome = elem.querySelector(".income-title").value,
                 cashIncome = elem.querySelector(".income-amount").value;
             if (elemIncome !== "" && cashIncome !== "") {
-                appData.income[elemIncome] = +cashIncome;
+                this.income[elemIncome] = +cashIncome;
             }
         });
-        for (let key in appData.income) {
-            appData.incomeMonth += +appData.income[key];
+        for (let key in this.income) {
+            this.incomeMonth += +this.income[key];
         }
     },
 
     showResult() {
-        budgetMonthInput.value = appData.budgetMonth;
-        budgetDayInput.value = Math.round(appData.budgetDay);
-        expensesMonthInput.value = appData.expensesMonth;
-        additionalExpensesValue.value = appData.addExpenses.join(", ");
-        additionalIncomeValue.value = appData.addIncome.join(", ");
-        targetMonthValue.value = appData.getTargetMonth();
-        incomePeriodValue.value = appData.calcPeriod();
+        budgetMonthInput.value = this.budgetMonth;
+        budgetDayInput.value = Math.round(this.budgetDay);
+        expensesMonthInput.value = this.expensesMonth;
+        additionalExpensesValue.value = this.addExpenses.join(", ");
+        additionalIncomeValue.value = this.addIncome.join(", ");
+        targetMonthValue.value = this.getTargetMonth();
+        incomePeriodValue.value = this.calcPeriod();
 
-        periodSelect.addEventListener("input",() => incomePeriodValue.value = appData.calcPeriod());
+        periodSelect.addEventListener("input",() => incomePeriodValue.value = this.calcPeriod());
 
 
     },
@@ -114,7 +113,7 @@ let appData = {
         addExp.forEach(elem => {
             elem = elem.trim();
             if(elem !== '') {
-                appData.addExpenses.push(elem);
+                this.addExpenses.push(elem);
             }
         })
     },
@@ -123,7 +122,7 @@ let appData = {
         additionalIncomeItem.forEach(elem => {
             elem = elem.value.trim();
             if(elem !== '') {
-                appData.addIncome.push(elem);
+                this.addIncome.push(elem);
             }
 
         })
@@ -131,20 +130,20 @@ let appData = {
 
     // расходы в месяц
     getExpensesMonth() {
-        for (let key in appData.expenses) {
-            appData.expensesMonth += appData.expenses[key];
+        for (let key in this.expenses) {
+            this.expensesMonth += this.expenses[key];
         }
     },
 
     // свободные деньги
     getBudget: function () {
-        appData.budgetMonth = appData.budget + appData.incomeMonth - appData.expensesMonth;
-        appData.budgetDay = Math.floor(appData.budgetMonth) / 30;
+        this.budgetMonth = this.budget + this.incomeMonth - this.expensesMonth;
+        this.budgetDay = Math.floor(this.budgetMonth) / 30;
     },
 
     //подсчет периода достижения цели
     getTargetMonth() {
-        return Math.ceil(targetAmount.value/appData.budgetMonth);
+        return Math.ceil(targetAmount.value/this.budgetMonth);
     },
     // getStatusIncome ...
     getStatusIncome: function(budgetDay) {
@@ -161,23 +160,34 @@ let appData = {
     return textResult;
 },
     getInfoDeposit() {
-        if (appData.deposit) {
-            appData.percentDeposit = +questionHelp('numb',
+        if (this.deposit) {
+            this.percentDeposit = +questionHelp('numb',
                 'какой годовой %?',
                 3);
-            appData.moneyDeposit = +questionHelp('numb',
+            this.moneyDeposit = +questionHelp('numb',
                 'Сумма на депозите?',
                 10000);
         }
     },
     calcPeriod() {
-        return appData.budgetMonth * periodSelect.value;
+        return this.budgetMonth * periodSelect.value;
     }
 };
 
+// function ...
+function hideStart() {
+    let blockInput = document.querySelectorAll("input");
+    blockInput.forEach((elem) => {
+        if (elem.getAttribute("type") === "text") {
+            elem.setAttribute("disabled", "disabled")
+        }
+    });
+    startButton.style.display = "none";
+    cancelButton.style.display = "block";
+}
 
-//addEventListener
-startButton.addEventListener("click", appData.start);
+//addEventListener ...
+startButton.addEventListener("click", appData.start.bind(appData));
 expensesPlusButton.addEventListener("click", appData.addExpensesBlock);
 incomePlusButton.addEventListener("click", appData.addIncomeBlock);
 
@@ -188,4 +198,6 @@ salaryAmount.addEventListener("input", () => {
 });
 periodSelect.addEventListener("input",() => periodAmount.innerHTML = periodSelect.value);
 
+startButton.addEventListener("click", hideStart);
 
+cancelButton.addEventListener("click", () => location.reload());
