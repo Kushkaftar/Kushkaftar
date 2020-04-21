@@ -51,6 +51,35 @@ let appData = {
         this.showResult();
     },
 
+    reset() {
+        for (let key in appData) {
+            switch (typeof (this[key])) {
+                case "number":
+                    this[key] = 0;
+                    break;
+                case "string":
+                    this[key] = '';
+                    break;
+                case "object":
+                    Array.isArray(this[key]) ? this[key] = [] : this[key] = {};
+                    break;
+
+            }
+        }
+
+
+        appData.dellBlock(expensesItems, expensesPlusButton);
+        appData.dellBlock(incomeItems, incomePlusButton);
+        resetObj();
+    },
+
+    dellBlock(node, btn) {
+        for (let i = 1; i < node.length; i++) {
+            node[i].remove();
+        }
+        btn.style.display = "block";
+    },
+
     addExpensesBlock() {
         let cloneExpensesItem = expensesItems[0].cloneNode(true);
         expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlusButton);
@@ -186,6 +215,24 @@ function hideStart() {
     cancelButton.style.display = "block";
 }
 
+function resetObj() {
+    let blockInput = document.querySelectorAll("input");
+    blockInput.forEach((elem) => {
+        elem.value = '';
+        if (elem.getAttribute("type") === "text") {
+            elem.removeAttribute("disabled")
+        }
+        if (elem.getAttribute("type") === "range") {
+            elem.value = "1";
+            periodAmount.innerHTML = "1";
+        }
+    });
+
+    startButton.setAttribute("disabled", "disabled");
+    startButton.style.display = "block";
+    cancelButton.style.display = "none";
+}
+
 //addEventListener ...
 startButton.addEventListener("click", appData.start.bind(appData));
 expensesPlusButton.addEventListener("click", appData.addExpensesBlock);
@@ -200,4 +247,5 @@ periodSelect.addEventListener("input",() => periodAmount.innerHTML = periodSelec
 
 startButton.addEventListener("click", hideStart);
 
-cancelButton.addEventListener("click", () => location.reload());
+//cancelButton.addEventListener("click", () => location.reload());
+cancelButton.addEventListener("click", appData.reset.bind(appData));
