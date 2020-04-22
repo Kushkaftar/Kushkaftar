@@ -52,7 +52,7 @@ let appData = {
     },
 
     reset() {
-        for (let key in appData) {
+        for (let key in this) {
             switch (typeof (this[key])) {
                 case "number":
                     this[key] = 0;
@@ -68,8 +68,8 @@ let appData = {
         }
 
 
-        appData.dellBlock(expensesItems, expensesPlusButton);
-        appData.dellBlock(incomeItems, incomePlusButton);
+        this.dellBlock(expensesItems, expensesPlusButton);
+        this.dellBlock(incomeItems, incomePlusButton);
         resetObj();
     },
 
