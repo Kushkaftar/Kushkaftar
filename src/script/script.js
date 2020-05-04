@@ -42,12 +42,7 @@ const AppData = function () {
 // methods
 
 AppData.prototype.start = function() {
-    // console.log('start');
-    // console.log(appData);
-    // console.log(this);
     this.budget = +salaryAmount.value;
-    // console.log(this.budget);
-    // console.log(appData.budget);
     this.getExpenses();
     this.getIncome();
     this.getExpensesMonth();
@@ -108,10 +103,7 @@ AppData.prototype.addIncomeBlock = function() {
 };
 
 AppData.prototype.getExpenses = function() {
-    const _this = this;
     expensesItems.forEach(elem => {
-        // console.log(this);
-        // console.log(_this);
         let elemExpenses = elem.querySelector(".expenses-title").value,
             cashExpenses = elem.querySelector(".expenses-amount").value;
         if (elemExpenses !== "" && cashExpenses !== "") {
@@ -245,8 +237,6 @@ AppData.prototype.resetObj = function() {
     cancelButton.style.display = "none";
 };
 AppData.prototype.watchApp = function() {
-    console.log(appData);
-    console.log(this);
     startButton.addEventListener("click", this.start.bind(this));
     expensesPlusButton.addEventListener("click", this.addExpensesBlock);
     incomePlusButton.addEventListener("click", this.addIncomeBlock);
@@ -260,44 +250,11 @@ AppData.prototype.watchApp = function() {
     cancelButton.addEventListener("click", this.reset.bind(this));
 };
 
-// AppData.prototype.watchApp = function() {
-//     const _this = this;
-//     startButton.addEventListener("click", this.start);
-//     expensesPlusButton.addEventListener("click",/* _this.addExpensesBlock*/ function() {
-//         console.log(this);
-//         this.addExpensesBlock;
-//     });
-//     incomePlusButton.addEventListener("click", this.addIncomeBlock);
-//     salaryAmount.addEventListener("input", () => {
-//         if (salaryAmount.value !== "") {
-//             startButton.removeAttribute("disabled");
-//         }
-//     });
-//     periodSelect.addEventListener("input", () => periodAmount.innerHTML = periodSelect.value);
-//     cancelButton.addEventListener("click", this.reset);
-//     startButton.addEventListener("click", this.hideStart);
-// };
+
 
 
 // конструктор
 const appData = new AppData();
-//console.log(appData);
 appData.watchApp();
 
 
-//addEventListener ...
-//startButton.addEventListener("click", appData.start.bind(appData));
-//expensesPlusButton.addEventListener("click", appData.addExpensesBlock);
-// incomePlusButton.addEventListener("click", appData.addIncomeBlock);
-
-// salaryAmount.addEventListener("input", () => {
-//     if (salaryAmount.value !== "") {
-//         startButton.removeAttribute("disabled");
-//     }
-// });
-//periodSelect.addEventListener("input", () => periodAmount.innerHTML = periodSelect.value);
-
-//startButton.addEventListener("click", appData.hideStart);
-
-//cancelButton.addEventListener("click", () => location.reload());
-cancelButton.addEventListener("click", appData.reset.bind(appData));
