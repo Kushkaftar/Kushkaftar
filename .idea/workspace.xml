@@ -68,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../COMPLETED_JOB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/script" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,6 +78,9 @@
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\GlO_Ac\lesson\src\script" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\GlO_Ac\lesson\src\script" />
       <recent name="C:\Users\User\Desktop\GlO_Ac\lesson" />
@@ -142,7 +145,14 @@
       <workItem from="1587139719850" duration="19859000" />
       <workItem from="1587401926810" duration="9215000" />
       <workItem from="1587490500669" duration="8552000" />
-      <workItem from="1587586841943" duration="280000" />
+      <workItem from="1587586841943" duration="886000" />
+      <workItem from="1587809860185" duration="5214000" />
+      <workItem from="1587838257849" duration="4667000" />
+      <workItem from="1588007918427" duration="4119000" />
+      <workItem from="1588051817046" duration="1168000" />
+      <workItem from="1588096404651" duration="5629000" />
+      <workItem from="1588268808767" duration="2036000" />
+      <workItem from="1588617868779" duration="2765000" />
     </task>
     <servers />
   </component>
@@ -182,9 +192,9 @@
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
     <state x="2792" y="207" key="SettingsEditor/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1585222294272" />
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1587490510735">
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1588617869460">
       <screen x="2560" y="145" width="1680" height="1000" />
     </state>
-    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1587490510735" />
+    <state x="3031" y="432" key="com.intellij.ide.util.TipDialog/2560.145.1680.1000/0.0.2048.1112@2560.145.1680.1000" timestamp="1588617869460" />
   </component>
 </project>
